@@ -33,33 +33,44 @@
 
 <p>Maps (Google, Bing, Here, Leaflet)</p>
 
-<p>Dies ist eine kleine Zusammenstellung der vier oben genannten Maps-Anbieter.
+<p>Dies ist eine kleine Zusammenstellung der Vier oben genannten Maps-Anbieter.
 Weitere Details dazu auf deren Webseiten.</p>
 
 <h5>
 <a name="here" class="anchor" href="#here"><span class="octicon octicon-link"></span></a>here</h5>
 
-<p><a href="http://developer.here.com/javascript-apis/documentation/maps/topics/overview.html">http://developer.here.com/javascript-apis/documentation/maps/topics/overview.html</a></p>
+<p><a href="http://developer.here.com/javascript-apis/documentation/maps/topics/overview.html">http://developer.here.com/javascript-apis/documentation/maps/topics/overview.html</a>
+Dies ist wohl die einfachste Art eine Map zu integrieren. Einfach Konto auf <a href="https://developer.here.com/">https://developer.here.com/</a> einrichten und mit APP ID und TOKEN <a href="https://developer.here.com/javascript-apis/documentation/maps/topics/quick-start.html">https://developer.here.com/javascript-apis/documentation/maps/topics/quick-start.html</a> sofort durchstarten. </p>
 
 <h5>
 <a name="leaflet" class="anchor" href="#leaflet"><span class="octicon octicon-link"></span></a>leaflet</h5>
 
-<p><a href="http://leafletjs.com/index.html">http://leafletjs.com/index.html</a></p>
+<p><a href="http://leafletjs.com/index.html">http://leafletjs.com/index.html</a>
+Mit dieser API ist es möglich gänzlich ohne Authentifizierung zu arbeiten. Doch nicht: <a href="http://account.cloudmade.com/user">http://account.cloudmade.com/user</a> der Layer muss gesetzt werden zur Nutzng. Die Nutzung in meinem Beispiel harkt aber noch etwas. So muss wohl meine ID aussehen - http://{s}.tile.cloudmade.com/34c013f1141844439c0ef2abb051d02a/997/256/{z}/{x}/{y}.png - läuft aber noch nicht.</p>
 
 <h5>
 <a name="bing" class="anchor" href="#bing"><span class="octicon octicon-link"></span></a>bing</h5>
 
-<p><a href="https://code.google.com/p/jquery-bing-maps/">https://code.google.com/p/jquery-bing-maps/</a></p>
+<p><a href="https://code.google.com/p/jquery-bing-maps/">https://code.google.com/p/jquery-bing-maps/</a>
+Es gibt eine Trail Version, das ganze scheint aber nicht kostenlos. Das anlegen und verwalten ist zunächst am umfangreichsten <a href="http://msdn.microsoft.com/en-us/library/ff428642.aspx">http://msdn.microsoft.com/en-us/library/ff428642.aspx</a> aber einmal eingerichtet ist die Anbindung ein Kinderspiel. <a href="https://www.bingmapsportal.com/application/index/">https://www.bingmapsportal.com/application/index/</a> Mein Key läuft am Expiration Date: 05/27/2014 ab.</p>
 
 <h5>
 <a name="google" class="anchor" href="#google"><span class="octicon octicon-link"></span></a>google</h5>
 
-<p><a href="https://developers.google.com/maps/documentation/javascript/examples/?hl=de-DE">https://developers.google.com/maps/documentation/javascript/examples/?hl=de-DE</a></p>
+<p><a href="https://developers.google.com/maps/documentation/javascript/examples/?hl=de-DE">https://developers.google.com/maps/documentation/javascript/examples/?hl=de-DE</a>
+Für die Nutzung der API aus einer Webview im Browser oder einer APP auf HTML Basis ist der Key scheinbar nicht zwingend notwendig. Ich jedenfalls habe ein positives Ergebnis ohne und in jeglichen Konstellationen für einen Browser-Key mit Referers <em>.</em> oder * werden meine Requests nicht akzeptiert <a href="https://console.developers.google.com/project/apps%7Ewebrtc42/apiui/credential">https://console.developers.google.com/project/apps~webrtc42/apiui/credential</a>.</p>
 
 <h5>
-<a name="f%C3%BCr-die-app" class="anchor" href="#f%C3%BCr-die-app"><span class="octicon octicon-link"></span></a>Für die App</h5>
+<a name="die-erkentnisse-aus-dem-app-build-findet-ihr-hier" class="anchor" href="#die-erkentnisse-aus-dem-app-build-findet-ihr-hier"><span class="octicon octicon-link"></span></a>Die Erkentnisse aus dem APP build findet ihr hier</h5>
 
 <p><a href="http://mitchobrian.github.io/ConactsList/">http://mitchobrian.github.io/ConactsList/</a></p>
+
+<h5>
+<a name="geolocation" class="anchor" href="#geolocation"><span class="octicon octicon-link"></span></a>Geolocation</h5>
+
+<p>Beim ersten mal kein triviales Thema. Wichtig bei der Erstellung einer APP auf HTML Basis ist die richtige Einstellung der nativen Parameter. Für Android auf keinen Fall das Manifest vergessen.
+<a href="http://docs.phonegap.com/en/1.8.0/cordova_geolocation_geolocation.md.html">http://docs.phonegap.com/en/1.8.0/cordova_geolocation_geolocation.md.html</a>
+Viele Probleme bei der Entwicklung treten dann auf, wenn man selber einmal im Browser das lesen der Position verbietet. Dazu gibt es bislang wohl auch kein Heilmittel. Stack Overfow ist voll davon <a href="https://support.google.com/gmm/answer/1250068?hl=en">https://support.google.com/gmm/answer/1250068?hl=en</a> Sind die Einstellungen frisch sollte es mit einem einfachen Beispiel reibungslos funktionieren <a href="http://www.w3schools.com/html/html5_geolocation.asp">http://www.w3schools.com/html/html5_geolocation.asp</a> – <a href="https://developer.mozilla.org/en-US/docs/WebAPI/Using_geolocation">https://developer.mozilla.org/en-US/docs/WebAPI/Using_geolocation</a>.</p>
         </section>
 
         <aside id="sidebar">
