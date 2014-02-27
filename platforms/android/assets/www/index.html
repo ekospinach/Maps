@@ -2,7 +2,7 @@
 <html> 
 	<head> 
 	<title>Maps</title> 
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="css/jquery.mobile-1.4.0.min.css">
         
     <script src="js/jquery-1.10.2.min.js"></script>
@@ -52,7 +52,7 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
 
     <!--bing -->
-     <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
+    <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="http://jquery-bing-maps.googlecode.com/svn/trunk/js/min/jquery.ui.bmap.min.js"></script>
 
@@ -135,7 +135,7 @@
 
                 $('#map_canvas').gmap({'credentials': YOUR_BING_MAP_CREDENTIALS,
                                       zoom: 2,
-                                      showDashboard: false}).bind('init', function(evt, map) {
+                                      showDashboard: true}).bind('init', function(evt, map) {
 
                     if(navigator.geolocation) {
                         navigator.geolocation.getCurrentPosition(function(position) {
@@ -184,7 +184,7 @@
           </div>
           <div id="leaflet" class="ui-body-d ui-content">
 
-            <div id="map"></div>
+            <div id="map" style="width: 600px; height: 400px"></div>
             <script>
             navigator.geolocation.getCurrentPosition(function(position) {
                 run(position.coords.latitude, position.coords.longitude);

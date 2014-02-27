@@ -11,7 +11,7 @@ http://developer.here.com/javascript-apis/documentation/maps/topics/overview.htm
 Dies ist wohl die einfachste Art eine Map zu integrieren. Einfach Konto auf https://developer.here.com/ einrichten und mit APP ID und TOKEN https://developer.here.com/javascript-apis/documentation/maps/topics/quick-start.html sofort durchstarten. 
 ##### leaflet
 http://leafletjs.com/index.html
-Mit dieser API ist es möglich gänzlich ohne Authentifizierung zu arbeiten. Die Nutzung in meinem Beispiel harkt aber noch etwas.
+Mit dieser API ist es möglich gänzlich ohne Authentifizierung zu arbeiten. Doch nicht: http://account.cloudmade.com/user der Layer muss gesetzt werden zur Nutzng. Die Nutzung in meinem Beispiel harkt aber noch etwas. So muss wohl meine ID aussehen - http://{s}.tile.cloudmade.com/34c013f1141844439c0ef2abb051d02a/997/256/{z}/{x}/{y}.png - läuft aber noch nicht.
 ##### bing
 https://code.google.com/p/jquery-bing-maps/
 Es gibt eine Trail Version, das ganze scheint aber nicht kostenlos. Das anlegen und verwalten ist zunächst am umfangreichsten http://msdn.microsoft.com/en-us/library/ff428642.aspx aber einmal eingerichtet ist die Anbindung ein Kinderspiel. https://www.bingmapsportal.com/application/index/ Mein Key läuft am Expiration Date: 05/27/2014 ab.
