@@ -16,14 +16,12 @@ e:\APPs\Maps\platforms\android\assets\www\config.xml \
 e:\APPs\Maps\platforms\android\assets\www\cordova.js \
 e:\APPs\Maps\platforms\android\assets\www\cordova_plugins.js \
 e:\APPs\Maps\platforms\android\assets\www\css \
-e:\APPs\Maps\platforms\android\assets\www\google.html \
 e:\APPs\Maps\platforms\android\assets\www\img \
 e:\APPs\Maps\platforms\android\assets\www\index.html \
 e:\APPs\Maps\platforms\android\assets\www\js \
 e:\APPs\Maps\platforms\android\assets\www\phonegap.js \
 e:\APPs\Maps\platforms\android\assets\www\plugins \
 e:\APPs\Maps\platforms\android\assets\www\res \
-e:\APPs\Maps\platforms\android\assets\www\test.html \
 e:\APPs\Maps\platforms\android\assets\www\css\images \
 e:\APPs\Maps\platforms\android\assets\www\css\index.css \
 e:\APPs\Maps\platforms\android\assets\www\css\jquery.mobile-1.4.0.min.css \
