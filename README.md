@@ -29,7 +29,8 @@ http://docs.phonegap.com/en/1.8.0/cordova_geolocation_geolocation.md.html
 Viele Probleme bei der Entwicklung treten dann auf, wenn man selber einmal im Browser das lesen der Position verbietet. Dazu gibt es bislang wohl auch kein Heilmittel. Stack Overfow ist voll davon https://support.google.com/gmm/answer/1250068?hl=en Sind die Einstellungen frisch sollte es mit einem einfachen Beispiel reibungslos funktionieren http://www.w3schools.com/html/html5_geolocation.asp – https://developer.mozilla.org/en-US/docs/WebAPI/Using_geolocation.
 ##### Release my APP
 Schön zu finden wie ich meine APP via bash signieren und zipalignen kann http://docs.phonegap.com/en/3.3.0/guide_platforms_android_tools.md.html#Android%20Command-line%20Tools http://developer.android.com/tools/publishing/app-signing.html#cert.
-
+#### Google Play
+https://play.google.com/store/apps/details?id=com.palmomedia.maps&hl=de
 #### Paypal
 [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mail%40michaelpalmer%2ede&lc=DE&item_name=Michael%20Palmer&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
 
