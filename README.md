@@ -6,8 +6,8 @@ Maps (Google, Bing, Here, Leaflet)
 Dies ist eine kleine Zusammenstellung der Vier oben genannten Maps-Anbieter.
 Weitere Details dazu auf deren Webseiten.
 
-!['screen2'](https://www.dropbox.com/s/67ytxb0l9ibdjrd/2014-02-28%2013.43.00.png)
-!['screen1'](https://www.dropbox.com/s/d36t6hkccutbwnw/2014-02-28%2013.43.05.png)
+!['screen2'](http://www.michaelpalmer.de/assets/img/maps/1.png)
+!['screen1'](http://www.michaelpalmer.de/assets/img/maps/2.png)
 
 ##### here
 http://developer.here.com/javascript-apis/documentation/maps/topics/overview.html
@@ -32,4 +32,5 @@ Schön zu finden wie ich meine APP via bash signieren und zipalignen kann http:/
 
 #### Paypal
 [Donate](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=mail%40michaelpalmer%2ede&lc=DE&item_name=Michael%20Palmer&no_note=0&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHostedGuest)
+
 !['Spenden'](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif)
