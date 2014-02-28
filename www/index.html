@@ -53,7 +53,7 @@
 
     <!--bing -->
     <script type="text/javascript" src="http://ecn.dev.virtualearth.net/mapcontrol/mapcontrol.ashx?v=7.0"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+    <!--<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>-->
     <script type="text/javascript" src="http://jquery-bing-maps.googlecode.com/svn/trunk/js/min/jquery.ui.bmap.min.js"></script>
 
     <!-- google -->
@@ -65,7 +65,7 @@
         <div data-role="tabs" id="tabs">
           <div data-role="navbar">
             <ul>
-              <li><a href="#google" data-ajax="false"><img src="http://support.etouch.net/cm/wiki/support.Plugins.wiki/1065456main_icon_google_maps.gif" valign="middle" width="26" height="26"> google</a></li>
+              <li><a href="#google" data-ajax="false" class="active"><img src="http://support.etouch.net/cm/wiki/support.Plugins.wiki/1065456main_icon_google_maps.gif" valign="middle" width="26" height="26"> google</a></li>
               <li><a href="#bing" data-ajax="false"><img src="http://www.impressdental.com/images/bing_icon.png" valign="middle" width="26" height="26"> bing</a></li>
               <li><a href="#here" data-ajax="false"><img src="http://screenshots.de.sftcdn.net/de/scrn/6652000/6652973/nokia-here-08-32x32.png" valign="middle" width="26" height="26"> here</a></li>
               <li><a href="#leaflet" data-ajax="false"><img src="http://sindre.at/stadtplanmacher/images/marker-icon.png" valign="middle" width="26" height="26"> leaflet</a></li>
@@ -76,7 +76,7 @@
             <div id="map-canvas"></div>
             <script>
                 var map;
-
+                
                 function initialize() {
                   var mapOptions = {
                     zoom: 15

@@ -10,9 +10,6 @@
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
-    <feature name="Contacts">
-        <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
-    </feature>
     <name>MAPS</name>
     <description>
         This is a very simple google, bing, here and leaflet maps example.
