@@ -14,15 +14,15 @@
             margin: 0;
             padding: 0;
             position: absolute;
-            overflow:hidden;
+            overflow: hidden;
             width: 100%;
             height: 100%;
         }
 
-        #mapContainer, #map_canvas, #map-canvas, #map {
+        #mapHere, #mapGoogle, #mapBing, #mapLet {
             width: 100%;
             left: 0px;
-            top: 46px;
+            top: 44px;
             bottom: 0px;
             position: absolute;
         }
@@ -73,147 +73,137 @@
           </div>
           <div id="google" class="ui-body-d ui-content">
 
-            <div id="map-canvas"></div>
+            <div id="mapGoogle"></div>
             <script>
-                var map;
-                
-                function initialize() {
-                  var mapOptions = {
-                    zoom: 15
-                  };
-                  map = new google.maps.Map(document.getElementById('map-canvas'),
-                      mapOptions);
-
-                  // Try HTML5 geolocation
-                  if(navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(function(position) {
-                      var pos = new google.maps.LatLng(position.coords.latitude,
-                                                       position.coords.longitude);
-
-                      var infowindow = new google.maps.InfoWindow({
-                        map: map,
+                function showGoogle() {
+                    var mapGoogle;       
+                    var mapOptions = {
+                        zoom: 15
+                    };
+                    mapGoogle = new google.maps.Map(document.getElementById('mapGoogle'), mapOptions);
+                    var pos = new google.maps.LatLng(latitude, longitude);
+                    var infowindow = new google.maps.InfoWindow({
+                        map: mapGoogle,
                         position: pos,
-                        content: '<div id="infoWindow">Location found using HTML5.</div>'
-                      });
-
-                      map.setCenter(pos);
-                    }, function() {
-                      handleNoGeolocation(true);
+                        content: '<div id="infoWindow">google info view</div>'
                     });
-                  } else {
-                    // Browser doesn't support Geolocation
-                    handleNoGeolocation(false);
-                  }
+                    mapGoogle.setCenter(pos);
                 }
-
-                function handleNoGeolocation(errorFlag) {
-                  if (errorFlag) {
-                    var content = 'Error: The Geolocation service failed.';
-                  } else {
-                    var content = 'Error: Your browser doesn\'t support geolocation.';
-                  }
-
-                  var options = {
-                    map: map,
-                    position: new google.maps.LatLng(52, 13),
-                    content: '<div id="infoWindow">' + content + '</div>'
-                  };
-
-                  var infowindow = new google.maps.InfoWindow(options);
-                  map.setCenter(options.position);
-                }
-
-                google.maps.event.addDomListener(window, 'load', initialize);
             </script>
 
           </div>
           <div id="bing" class="ui-body-d ui-content">
 
-            <div id="map_canvas"></div>
+            <div id="mapBing"></div>
             <script>
-                const YOUR_BING_MAP_CREDENTIALS = 'AveP_RSU9n-LMWf3bJmsicSiMYIG7I8nu8tI6P4tI1_WTyEd1jpmznDEa8-jnXib';
-
-                $('#map_canvas').gmap({'credentials': YOUR_BING_MAP_CREDENTIALS,
-                                      zoom: 2,
-                                      showDashboard: true}).bind('init', function(evt, map) {
-
-                    if(navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(function(position) {
-                            var clientPosition = new Microsoft.Maps.Location(position.coords.latitude, position.coords.longitude);
-                            $('#map_canvas').gmap('addMarker', {'location': clientPosition, 'bounds': true});
-
-                        }, function() {
-                            // failed
-                            var clientPosition = new Microsoft.Maps.Location('52.5341397', '13.4220405');
-                            $('#map_canvas').gmap('addMarker', {'location': clientPosition, 'bounds': true});
-
-                        });
-                    } else {
-                        // Browser doesn't support Geolocation
-                    }
-
-                });        
+                function showBing() {
+                    const YOUR_BING_MAP_CREDENTIALS = 'AveP_RSU9n-LMWf3bJmsicSiMYIG7I8nu8tI6P4tI1_WTyEd1jpmznDEa8-jnXib';
+                    $('#mapBing').gmap({'credentials': YOUR_BING_MAP_CREDENTIALS,
+                                          zoom: 2,
+                                          showDashboard: true}).bind('init', function(evt, map) {
+                        var clientPosition = new Microsoft.Maps.Location(latitude, longitude);
+                        $('#mapBing').gmap('addMarker', {'location': clientPosition, 'bounds': true});
+                    });     
+                }
             </script>
 
           </div>
           <div id="here" class="ui-body-d ui-content">
         
-            <div id="mapContainer"></div>
+            <div id="mapHere"></div>
             <script>
-            nokia.Settings.set("app_id", "HcAxX0W5CRY9SZ6d8Zma");
-            nokia.Settings.set("app_code", "6f0x1eFUzMoazY8R8LnavA");
-            var map = new nokia.maps.map.Display(
-                    document.getElementById("mapContainer"), {
-                        // Zoom level for the map
-                        zoomLevel: 15,
-                        components: [new nokia.maps.map.component.Behavior()],
-                        // Map center coordinates
-                        center: [52.5341397, 13.4220405]
-                    }
-                );
-
-            // Create a marker and add it to the map
-            var marker = new nokia.maps.map.StandardMarker([52.5341397, 13.4220405], {
-                text: "Hi!", // Small label
-                draggable: true  // Make the marker draggable
-            });
-
-            map.objects.add(marker);
+                function showHere() {
+                    nokia.Settings.set("app_id", "HcAxX0W5CRY9SZ6d8Zma");
+                    nokia.Settings.set("app_code", "6f0x1eFUzMoazY8R8LnavA");
+                    var mapHere = new nokia.maps.map.Display(
+                        document.getElementById("mapHere"), {
+                            // Zoom level for the map
+                            zoomLevel: 15,
+                            components: [
+                                // Behavior collection
+                                new nokia.maps.map.component.Behavior(),
+                                new nokia.maps.map.component.ZoomBar(),
+                                new nokia.maps.map.component.Overview(),
+                                new nokia.maps.map.component.TypeSelector(),
+                                new nokia.maps.map.component.ScaleBar() ],
+                            // Map center coordinates
+                            center: [latitude, longitude]
+                        }
+                    );
+                    // Create a marker and add it to the map
+                    var marker = new nokia.maps.map.StandardMarker([latitude, longitude], {
+                        text: "", // Small label
+                        draggable: true  // Make the marker draggable
+                    });
+                    mapHere.objects.add(marker);
+                }
             </script>
 
           </div>
           <div id="leaflet" class="ui-body-d ui-content">
 
-            <div id="map"></div>
+            <div id="mapLet"></div>
             <script>
-            navigator.geolocation.getCurrentPosition(function(position) {
-                run(position.coords.latitude, position.coords.longitude);
-
-            }, function() {
-                    // failed
-                    run('52.5341397', '13.4220405');
-
-            });
-
-            function run(lat, long) {
-                var map = L.map('map').setView([lat, long], 15);
-/*
-                L.tileLayer('http://{s}.tile.cloudmade.com/34c013f1141844439c0ef2abb051d02a/997/256/{z}/{x}/{y}.png', {
-                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
-                    maxZoom: 18
-                }).addTo(map);
-*/
-                L.tileLayer('http://{s}.tile.cloudmade.com/BC9A493B41014CAABB98F0471D759707/997/256/{z}/{x}/{y}.png', {
-                    maxZoom: 18,
-                    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>'
-                }).addTo(map);
-
-                var marker = L.marker([lat, long]).addTo(map);
-            }
+                function showLeaflet() {
+                    var mapLeaoflet = L.map('mapLet').setView([latitude, longitude], 15);
+                    L.tileLayer('http://{s}.tile.cloudmade.com/34c013f1141844439c0ef2abb051d02a/997/256/{z}/{x}/{y}.png', {
+                        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+                        maxZoom: 18
+                    }).addTo(mapLeaoflet);
+                    L.marker([latitude, longitude]).addTo(mapLeaoflet);
+                }
             </script>
 
           </div>
         </div>
+    
+        <div style="position:absolute; bottom: 100px; width: 100%; height: 30px; text-align: center; z-index:9992;"><a href="http://mitchobrian.github.io/Maps/" target="_blank">find me on: mitchobrian.github.io/Maps/</a></div>
+    
     </div>
+    
+    <!-- get geo -->
+    <script>
+        document.addEventListener("DOMContentLoaded", onDeviceReady, false);    
+        function onDeviceReady() {
+            $.mobile.loading('show', {theme: "a", textVisible: false, text: "", textonly: false});
+        }   
+        
+        var latitude = 52.5341397;
+        var longitude = 13.4220405;
+        
+        function position(position) {
+            latitude = position.coords.latitude;        
+            longitude = position.coords.longitude;   
+            showAll();
+        }
+        
+        function handleNoGeolocation(html5) {
+            if(html5) alert('your browser does support geolocation but it failed this time');
+            else alert('your browser does not support geolocation');
+            showAll();
+        }
+        
+        setTimeout(start, 500);
+        
+        function start() {
+            // Try HTML5 geolocation
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(position,
+                    handleNoGeolocation,
+                    {timeout:60000});
+            } else {
+                handleNoGeolocation(false);
+            }
+        }
+        
+        function showAll() {
+            showGoogle();
+            showBing();
+            showHere();
+            showLeaflet();
+            $.mobile.loading( "hide" );
+        }
+    </script>
+    
 </body>
 </html>
